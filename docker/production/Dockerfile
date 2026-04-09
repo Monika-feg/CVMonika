@@ -29,6 +29,7 @@ USER www-data
 # =================================================================
 # Stage 2: Frontend assets compilation
 # =================================================================
+
 FROM node:20-alpine AS static-assets
 
 ARG APP_VERSION
@@ -38,6 +39,8 @@ WORKDIR /app
 COPY package*.json vite.config.ts ./
 RUN npm ci
 COPY . .
+# Kopiera produktionsmiljöfilen till .env innan build
+RUN cp .env.production.example .env
 ENV VITE_APP_NAME=${APP_NAME:-repotracker}
 ENV VITE_APP_VERSION=${APP_VERSION}
 RUN npm run build
