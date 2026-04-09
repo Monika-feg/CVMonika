@@ -1,0 +1,129 @@
+
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --font-sans:
+        'Concert One', 'Quicksand', 'Nunito', ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+    --background: oklch(93.606% 0.02264 352.886);
+    /* Blossom vit */
+    --foreground: oklch(0.15 0.03 340);
+    /* Mörk körsbärstext */
+    --card: oklch(1 0.01 350);
+    --card-foreground: oklch(0.15 0.03 340);
+    --popover: oklch(1 0.01 350);
+    --popover-foreground: oklch(0.15 0.03 340);
+    --primary: oklch(0.65 0.22 355);
+    /* Sakura rosa #ff6b9d */
+    --primary-foreground: oklch(0.99 0.005 350);
+    --secondary: oklch(0.78 0.15 310);
+    /* Lavendel #c084fc */
+    --secondary-foreground: oklch(0.15 0.03 310);
+    --muted: oklch(0.94 0.03 350);
+    --muted-foreground: oklch(0.52 0.06 350);
+    --accent: oklch(0.88 0.1 200);
+    /* Mint #67e8f9 */
+    --accent-foreground: oklch(0.15 0.05 200);
+    --destructive: oklch(0.577 0.245 27.325);
+    --destructive-foreground: oklch(0.577 0.245 27.325);
+    --border: oklch(0.88 0.05 350);
+    --input: oklch(0.92 0.03 350);
+    --ring: oklch(0.65 0.22 355);
+    --radius: 0.75rem;
+    --sidebar: oklch(0.96 0.02 350);
+    --sidebar-foreground: oklch(0.15 0.03 340);
+    --sidebar-primary: oklch(0.65 0.22 355);
+    --sidebar-primary-foreground: oklch(0.99 0.005 350);
+    --sidebar-accent: oklch(0.91 0.04 350);
+    --sidebar-accent-foreground: oklch(0.15 0.03 340);
+    --sidebar-border: oklch(0.88 0.05 350);
+    --sidebar-ring: oklch(0.65 0.22 355);
+}
+
+.dark {
+    --background: oklch(19.008% 0.04645 346.339);
+    /* Mörk marinblå/svart */
+    --foreground: oklch(0.95 0.02 350);
+    /* Krämvit */
+    --card: oklch(0.13 0.03 340);
+    --card-foreground: oklch(0.95 0.02 350);
+    --popover: oklch(0.13 0.03 340);
+    --popover-foreground: oklch(0.95 0.02 350);
+    --primary: oklch(0.65 0.22 355);
+    /* Sakura rosa — samma i dark */
+    --primary-foreground: oklch(0.1 0.02 340);
+    --secondary: oklch(0.78 0.15 310);
+    /* Lavendel — samma i dark */
+    --secondary-foreground: oklch(0.1 0.02 310);
+    --muted: oklch(0.2 0.04 340);
+    --muted-foreground: oklch(0.65 0.06 350);
+    --accent: oklch(0.88 0.1 200);
+    /* Mint — samma i dark */
+    --accent-foreground: oklch(0.1 0.02 200);
+    --destructive: oklch(0.396 0.141 25.723);
+    --destructive-foreground: oklch(0.637 0.237 25.331);
+    --border: oklch(0.22 0.05 340);
+    --input: oklch(0.22 0.05 340);
+    --ring: oklch(0.65 0.22 355);
+    --sidebar: oklch(0.13 0.03 340);
+    --sidebar-foreground: oklch(0.95 0.02 350);
+    --sidebar-primary: oklch(0.65 0.22 355);
+    --sidebar-primary-foreground: oklch(0.95 0.02 350);
+    --sidebar-accent: oklch(0.18 0.04 340);
+    --sidebar-accent-foreground: oklch(0.95 0.02 350);
+    --sidebar-border: oklch(0.22 0.05 340);
+    --sidebar-ring: oklch(0.65 0.22 355);
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
