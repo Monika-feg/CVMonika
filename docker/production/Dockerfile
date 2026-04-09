@@ -24,7 +24,7 @@ COPY --chown=www-data:www-data composer.json composer.lock ./
 ENV COMPOSER_ALLOW_SUPERUSER=1
 RUN composer install --no-dev --no-interaction --no-scripts --prefer-dist
 
-USER www-data
+USER www-data 
 
 # =================================================================
 # Stage 2: Frontend assets compilation
