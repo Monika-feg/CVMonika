@@ -89,7 +89,7 @@ COPY --from=static-assets --chown=www-data:www-data /app/public/build ./public/b
 
 # Copy application source code
 COPY --chown=www-data:www-data composer.json composer.lock ./
-COPY --chown=www-data:www-data .env.example .env
+COPY --chown=www-data:www-data .env.production.example .env
 COPY --chown=www-data:www-data app ./app
 COPY --chown=www-data:www-data artisan artisan
 COPY --chown=www-data:www-data bootstrap ./bootstrap
