@@ -81,6 +81,13 @@ return [
             'url' => 'https://github.com/Monika-feg/KawaiiCanvasClient',
         ],
 
+        [
+            'name' => 'CVMonika',
+            'description' => 'Ett eget projekt för min personliga CV-sida, byggd för att presentera utbildning, erfarenhet, projekt och kontaktuppgifter på ett tydligt och lättillgängligt sätt. I projektet har jag arbetat med både struktur, design och innehåll och kombinerat frontend och backend i samma applikation.',
+            'extraLanguages' => ['Laravel', 'PHP', 'Inertia', 'React', 'Vite', 'Tailwind CSS', 'Docker'],
+            'url' => 'https://github.com/Monika-feg/CVMonika',
+        ],
+
     ],
 
     'skills' => [

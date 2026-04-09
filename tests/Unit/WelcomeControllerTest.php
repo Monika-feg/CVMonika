@@ -15,6 +15,8 @@ it('renders the welcome page with cv data from laravel', function () {
             ->where('cvData.hero.greeting', 'Hej! jag är Monika Engström')
             ->where('cvData.profile.name', 'Monika Engström')
             ->has('cvData.education', 2)
-            ->has('cvData.repositories', 3)
+            ->has('cvData.repositories', 4)
+            ->where('cvData.repositories.3.name', 'CVMonika')
+            ->where('cvData.repositories.3.url', 'https://github.com/Monika-feg/CVMonika')
             ->has('cvData.languages', 2));
 });
