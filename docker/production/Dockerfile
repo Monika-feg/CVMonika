@@ -41,6 +41,7 @@ RUN npm ci
 COPY . .
 # Kopiera produktionsmiljöfilen till .env innan build
 RUN cp .env.production.example .env
+RUN echo "APP_URL i .env är:" && cat .env | grep APP_URL
 ENV VITE_APP_NAME=${APP_NAME:-repotracker}
 ENV VITE_APP_VERSION=${APP_VERSION}
 RUN npm run build
