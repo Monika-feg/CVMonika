@@ -9,7 +9,8 @@ export default defineConfig(({ mode }) => {
 
     return {
         define: {
-            // Only expose specific APP_ variables we need
+            // Expose APP_URL so asset URLs use correct protocol
+            'import.meta.env.APP_URL': JSON.stringify(env.APP_URL || ''),
             'import.meta.env.APP_VERSION': JSON.stringify(env.APP_VERSION || '1.0.0'),
             'import.meta.env.APP_NAME': JSON.stringify(env.APP_NAME || 'cvmonika'),
         },
