@@ -1,4 +1,4 @@
-import { Github, Mail, Phone, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import type { SidebarLink } from '@/components/cv/types';
 
 type CvSidebarProps = {
